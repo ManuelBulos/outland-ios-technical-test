@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photos-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ImageListViewController" id="BYZ-38-t0r" customClass="ImageListViewController" customModule="outland" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" text="" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="VSc-lS-alb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uw9-0a-4p2">
+                                <rect key="frame" x="0.0" y="112" width="414" height="784"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-AR-uYA">
+                                <rect key="frame" x="0.0" y="112" width="414" height="784"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VSc-lS-alb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RlQ-lI-aCU"/>
+                            <constraint firstItem="Uw9-0a-4p2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SsH-2D-Gb8"/>
+                            <constraint firstAttribute="bottom" secondItem="ieF-AR-uYA" secondAttribute="bottom" id="Twc-Un-xJP"/>
+                            <constraint firstItem="ieF-AR-uYA" firstAttribute="top" secondItem="VSc-lS-alb" secondAttribute="bottom" constant="12" id="Xug-DN-9Uz"/>
+                            <constraint firstItem="VSc-lS-alb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aIc-7a-KP4"/>
+                            <constraint firstItem="VSc-lS-alb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g46-tV-lUt"/>
+                            <constraint firstItem="Uw9-0a-4p2" firstAttribute="top" secondItem="VSc-lS-alb" secondAttribute="bottom" constant="12" id="hYi-Bj-Weu"/>
+                            <constraint firstItem="ieF-AR-uYA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="it7-mb-868"/>
+                            <constraint firstItem="Uw9-0a-4p2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uCH-VT-CpH"/>
+                            <constraint firstItem="ieF-AR-uYA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="v3N-ip-ikv"/>
+                            <constraint firstAttribute="bottom" secondItem="Uw9-0a-4p2" secondAttribute="bottom" id="xc3-dr-yLi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photos" id="s3E-Af-dwq"/>
+                    <connections>
+                        <outlet property="imageListTableView" destination="Uw9-0a-4p2" id="ps4-ab-TWu"/>
+                        <outlet property="searchQueriesTableView" destination="ieF-AR-uYA" id="ySb-cw-zyF"/>
+                        <outlet property="searchbar" destination="VSc-lS-alb" id="d2Q-4V-Rc0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.579710144927539" y="87.723214285714278"/>
+        </scene>
+        <!--Image Detail View Controller-->
+        <scene sceneID="iKf-Pg-wvV">
+            <objects>
+                <viewController storyboardIdentifier="ImageDetailViewController" modalPresentationStyle="overFullScreen" id="zkF-ev-6Hc" customClass="ImageDetailViewController" customModule="outland" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SoG-iD-QIT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="rgy-a2-crJ">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz1-29-Q5H" customClass="ZoomableImageView" customModule="outland" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="IWS-28-Met"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="AXx-uG-op0"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhQ-8e-4z4">
+                                <rect key="frame" x="349" y="44" width="41" height="40"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="zkF-ev-6Hc" eventType="touchUpInside" id="ThX-Qb-aIo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3OL-Gb-n9o"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3OL-Gb-n9o" firstAttribute="trailing" secondItem="XhQ-8e-4z4" secondAttribute="trailing" constant="24" id="490-iD-Hki"/>
+                            <constraint firstItem="Oz1-29-Q5H" firstAttribute="leading" secondItem="SoG-iD-QIT" secondAttribute="leading" id="FeI-9W-pLo"/>
+                            <constraint firstItem="rgy-a2-crJ" firstAttribute="centerY" secondItem="SoG-iD-QIT" secondAttribute="centerY" id="UCv-Tu-vsB"/>
+                            <constraint firstAttribute="bottom" secondItem="Oz1-29-Q5H" secondAttribute="bottom" id="boe-0m-29Z"/>
+                            <constraint firstItem="Oz1-29-Q5H" firstAttribute="top" secondItem="SoG-iD-QIT" secondAttribute="top" id="cdT-Gm-3ca"/>
+                            <constraint firstItem="rgy-a2-crJ" firstAttribute="centerX" secondItem="SoG-iD-QIT" secondAttribute="centerX" id="eTJ-9P-Q5P"/>
+                            <constraint firstItem="Oz1-29-Q5H" firstAttribute="trailing" secondItem="SoG-iD-QIT" secondAttribute="trailing" id="jnT-ha-VLX"/>
+                            <constraint firstItem="XhQ-8e-4z4" firstAttribute="top" secondItem="3OL-Gb-n9o" secondAttribute="top" id="xhR-oQ-aVg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="zoomableImageView" destination="Oz1-29-Q5H" id="vaD-kh-fsc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="46e-1V-r05" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808.69565217391312" y="87.723214285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
